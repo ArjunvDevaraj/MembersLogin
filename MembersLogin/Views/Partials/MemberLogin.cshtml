@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<MembersLogin.Models.LoginModel>
+
+@using Umbraco.Web;
+
+@{
+    //bool _auth = Umbraco.Web.Composing.Current.UmbracoHelper.MemberIsLoggedOn();
+    bool _auth1 = Umbraco.MemberIsLoggedOn();
+}
+
+@{ if (!_auth1)
+    {
+        using (Html.BeginUmbracoForm("SubmitLogin", "Member", System.Web.Mvc.FormMethod.Post, new { id = "login" }))
+        {
+            @Html.AntiForgeryToken();
+            <div class="form-controls">
+                <div class="form-icon"><i class="fas fa-user"></i></div>
+                <input type="text" name="Username" class="form-control">
+            </div>
+            <div class="form-controls">
+                <div class="form-icon"><i class="fas fa-lock"></i></div>
+                <input type="password" name="Password" class="form-control">
+                <div class="form-icon-right">
+                    <button type="button" class="eye-view-btn"><i class="far fa-eye-slash"></i></button>
+                </div>
+            </div>
+            @Html.ValidationSummary();
+            <button type="submit" name="login" class="signin-btn">Sign In</button>
+            <ul class="forgot-part">
+                <li> <a href="forgot-username.html">Forgot Username</a> </li>
+                <li> <a href="forgot-password.html">Forgot Password</a> </li>
+            </ul>
+        }
+    }
+
+}

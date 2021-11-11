@@ -1,0 +1,201 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Umbraco.Web.PublishedModels.Home>
+	@{
+	Layout = "Master.cshtml";
+	}
+
+	@* the fun starts here *@
+
+	<div class="col-12 col-lg-6">
+		<section class="layout-main">
+			<div class="row m-0 align-items-center page-title">
+				<h1>@Model.Name</h1>
+
+				<div class="page-title">
+					@if (Umbraco.MemberIsLoggedOn())
+					{
+					var member = Umbraco.MembershipHelper.GetCurrentMember();
+
+					<h1>Welcome @Umbraco.MembershipHelper.CurrentUserName </h1>
+					<p>User Id is  @Umbraco.MembershipHelper.GetCurrentMemberId()</p>
+					<p>First Name is  @member.Value("firstName")</p>
+					<p>Last Name is  @member.Value("lastName")</p>
+					<p>PIN is  @member.Value("pin")</p>
+					}
+					else
+					{
+					<h1>You are not logged on!</h1>
+					}
+				</div>
+			</div>
+
+			<div class="accounts-summary">
+				<div class="row m-0 account-item overall align-items-center">
+					<div class="col-12 col-lg-6 col-md-6 left">
+						<h2>
+							Overall Balance
+						</h2>
+						<h3>
+							All Checking And Savings Account
+						</h3>
+					</div>
+					<div class="col-12 col-lg-5 col-md-5 pe-0 right">
+						<h2>
+							Total Available Balance
+						</h2>
+						<h3>
+							$ 1,26,345.75
+						</h3>
+					</div>
+					<div class="col-12 col-lg-1 col-md-1 d-none d-sm-block p-0 text-center">
+						<i class="fas fa-ellipsis-v"></i>
+					</div>
+				</div>
+				<div class="row m-0 account-item align-items-center">
+					<div class="col-12 col-lg-6 col-md-6 left">
+						<h2>
+							84 - Totally Green Checking
+						</h2>
+						<h3>
+							13511799351807
+						</h3>
+					</div>
+					<div class="col-12 col-lg-5 col-md-5 pe-0 right">
+						<h2>
+							Available Balance
+						</h2>
+						<h3>
+							$ 70,725.75
+						</h3>
+					</div>
+					<div class="col-12 col-lg-1 col-md-1 d-none d-sm-block p-0 text-center">
+						<i class="fas fa-ellipsis-v"></i>
+					</div>
+					<div class="col-12 col-lg-12">
+						<div class="row option-box-con">
+							<div class="col-12 col-lg-3 p-2">
+								<div class="option-box active-1">
+									<div class="icon-rounded">
+										<i class="fas fa-toggle-on"></i>
+									</div><br>
+									<h4>
+										Setup recurring <br> payment
+									</h4>
+								</div>
+
+							</div>
+							<div class="col-12 col-lg-3 p-2">
+								<div class="option-box active-2">
+									<div class="icon-rounded">
+										<i class="fas fa-dollar-sign"></i>
+									</div>
+									<h4 style="display: block;">
+										Pay bill amount due
+										<br> $15.00
+									</h4>
+								</div>
+							</div>
+							<div class="col-12 col-lg-3 p-2">
+								<div class="option-box">
+									<div class="icon-rounded">
+										<i class="fas fa-arrow-left"></i>
+									</div>
+									<h4>
+										Transfer from
+									</h4>
+								</div>
+							</div>
+							<div class="col-12 col-lg-3 p-2">
+								<div class="option-box">
+									<div class="icon-rounded">
+										<i class="fas fa-star"></i>
+									</div>
+									<h4>
+										Redeem Reawards
+									</h4>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row m-0 account-item align-items-center">
+					<div class="col-12 col-lg-6 col-md-6 left">
+						<h2>
+							84 - Totally Green Checking
+						</h2>
+						<h3>
+							13511799351807
+						</h3>
+					</div>
+					<div class="col-12 col-lg-5 col-md-5 pe-0 right">
+						<h2>
+							Available Balance
+						</h2>
+						<h3>
+							$ 70,725.75
+						</h3>
+					</div>
+					<div class="col-12 col-lg-1 col-md-1 d-none d-sm-block p-0 text-center">
+						<i class="fas fa-ellipsis-v"></i>
+					</div>
+				</div>
+				<div class="row m-0 account-item align-items-center">
+					<div class="col-12 col-lg-6 col-md-6 left">
+						<h2>
+							84 - Totally Green Checking
+						</h2>
+						<h3>
+							13511799351807
+						</h3>
+					</div>
+					<div class="col-12 col-lg-5 col-md-5 pe-0 right">
+						<h2>
+							Available Balance
+						</h2>
+						<h3>
+							$ 70,725.75
+						</h3>
+					</div>
+					<div class="col-12 col-lg-1 col-md-1 d-none d-sm-block p-0 text-center">
+						<i class="fas fa-ellipsis-v"></i>
+					</div>
+				</div>
+				<div class="row m-0 account-item align-items-center">
+					<div class="col-12 col-lg-6 col-md-6 left">
+						<h2>
+							84 - Totally Green Checking
+						</h2>
+						<h3>
+							13511799351807
+						</h3>
+					</div>
+					<div class="col-12 col-lg-5 col-md-5 pe-0 right">
+						<h2>
+							Available Balance
+						</h2>
+						<h3>
+							$ 70,725.75
+						</h3>
+					</div>
+					<div class="col-12 col-lg-1 col-md-1 d-none d-sm-block p-0 text-center">
+						<i class="fas fa-ellipsis-v"></i>
+					</div>
+				</div>
+				<div class="row pt-2">
+					<div class="col-12 col-lg-6 mb-24">
+						<a href="services_request.html" class="request-card">
+							<div class="d-flex align-items-center">
+								<span class="request-icon blue">
+									<i class="fas fa-question"></i>
+								</span> Service Requests
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+
+
+
